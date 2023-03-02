@@ -1,0 +1,16 @@
+server:
+  port: 10001
+
+logging:
+  level:
+    root: INFO
+    com.example.homeworkcrawler: DEBUG
+  file:
+    name: app.log
+  pattern:
+    console: '%clr(%-5level) %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%thread]){magenta} %clr(%class{36}#%method:%line){cyan} [tid=%X{trace_id}] - %msg%n'
+    file: '%-5level %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %class{36}#%method:%line [tid=%X{trace_id}] - %msg%n'
+    dateformat: 'yyyy-MM-dd HH:mm:ss.SSS'
+  logback:
+    rolling-policy:
+      file-name-pattern: "app.%d{yyyy-MM-dd}_%i.log"
