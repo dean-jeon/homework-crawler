@@ -4,7 +4,7 @@
 
 ```
 /java
-  /com.example.homeworkcrawler.util.ListUtil
+  /com.example.homeworkcrawler
     /application
       /CrawlingApplication.java - 크롤링 비즈니스 로직  
       /extractor/NumberAlphabetExtractor.java - 크롤링한 문서의 컨텐츠 추출(정렬,중복제거,머지)
