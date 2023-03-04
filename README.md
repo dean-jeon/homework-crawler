@@ -62,7 +62,7 @@
 * 최종 결과 merge를 위해 Queue(LinkedList)를 사용하여 남아 있는 요소가 있는지 없는지 확인합니다.
 ### Cache
 * ehcache를 사용합니다. LRU 알고리즘이 적용되며 ehcache.xml에 메모리 사이즈, 만료시간, 리스너의 위치 설정이 있습니다.
-* 리스너(CacheEventLogger)에는 캐시 생성, 만료시 로그를 기록합니다.
+* 리스너(CacheEventLogger)에서는 캐시 생성, 만료시 로그를 기록합니다.
 
 ## 테스트
 ### Spock
