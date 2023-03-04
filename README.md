@@ -51,7 +51,7 @@
   * parallelStream() 을 사용합니다.
   * 기본 pool 이 사용되지 않도록 core수*4만큼의 pool을 config에 정의하였습니다. 
 ### 재시도
-* @Retryable 을 이용하여 지정된 exception이 throw 될때만 재시도를 합니다.
+* @Retryable 을 이용하여 지정된 exception이 throw 될때만 잠시 대기했다 최대 3회까지 재시도를 합니다.
 ### 문서 조회 및 파싱
 * Jsoup을 사용하여 html 컨텐츠를 읽어옵니다. 
 * 요구사항은 tag를 포함한 전체 html을 읽어서 처리하지만 tag를 제외한 text만 읽도록 변경 될 수 있으므로 Jsoup을 사용하는게 유리하다 판단했습니다.  
