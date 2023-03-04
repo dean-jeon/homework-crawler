@@ -26,13 +26,13 @@ public class CrawlingApplication {
     public String findDeDuplicatedNumberAndAlphabet(List<String> urls) {
         List<HtmlResult> htmlResults = findHtmlTextWithParallel(urls);
 
-        validateHtmlTextElseThrow(htmlResults);
+        validateHtmlText(htmlResults);
 
         return numberAlphabetExtractor.extractDeDuplicatedNumberAndAlphabet(ListUtil.convert(htmlResults,
                                                                                              HtmlResult::getHtml));
     }
 
-    private void validateHtmlTextElseThrow(List<HtmlResult> htmlResults) {
+    private void validateHtmlText(List<HtmlResult> htmlResults) {
         List<String> errorMessages = htmlResults.stream()
                                                 .filter(it -> !it.isSuccess())
                                                 .map(HtmlResult::getErrorMessage)
