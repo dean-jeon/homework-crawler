@@ -39,7 +39,7 @@ public class NumberAlphabetExtractor {
             return StringUtils.EMPTY;
         }
 
-        // 중복 제거 & 숫자 정렬(TreeSet). 단, 대/소문자는 정렬 불필요
+        // 중복 제거 & 숫자 정렬(TreeSet). 단, 여기에서 대/소문자는 중복 제거는 하되 정렬은 불필요
         Set<Character> numberSet = new TreeSet<>();
         Set<Character> upperCaseSet = new HashSet<>();
         Set<Character> lowerCaseSet = new HashSet<>();
