@@ -1,7 +1,8 @@
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '3.0.3'
+    id 'org.springframework.boot' version '2.7.6'
     id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'groovy'
 }
 
 group = 'com.example'
@@ -12,15 +13,32 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'groovy'
+apply plugin: 'jacoco'
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.retry:spring-retry'
+    implementation 'org.springframework:spring-aspects'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'javax.cache:cache-api:1.1.1'
+    implementation 'org.ehcache:ehcache:3.10.8'
+    implementation 'org.jsoup:jsoup:1.15.4'
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.apache.groovy:groovy'
+    implementation platform('org.apache.groovy:groovy-bom:4.0.6')
 
     compileOnly 'org.projectlombok:lombok'
 
+    annotationProcessor 'org.projectlombok:lombok'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.spockframework:spock-core'
+    testImplementation platform("org.spockframework:spock-bom:2.2-groovy-4.0")
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
 }

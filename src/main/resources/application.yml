@@ -14,3 +14,8 @@ logging:
   logback:
     rolling-policy:
       file-name-pattern: "app.%d{yyyy-MM-dd}_%i.log"
+
+spring:
+  cache:
+    jcache:
+      config: classpath:ehcache.xml

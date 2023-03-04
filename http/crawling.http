@@ -1,0 +1,17 @@
+### 기본 3개 사이트 체크
+GET http://localhost:10001/api/v1/crawling/find-number-and-alphabet?urls=https://shop.hyundai.com,https://www.kia.com,https://www.genesis.com
+
+### 리다이렉트 체크
+GET http://localhost:10001/api/v1/crawling/find-number-and-alphabet?urls=https://link.coupang.com/a/QUOX5
+
+### 타임아웃 체크
+GET http://localhost:10001/api/v1/crawling/find-number-and-alphabet?urls=https://httpstat.us/200?sleep=5000
+
+### http 404 에러 체크
+GET http://localhost:10001/api/v1/crawling/find-number-and-alphabet?urls=https://stackoverflow.com/abcdefg
+
+### Unknown Host 체크
+GET http://localhost:10001/api/v1/crawling/find-number-and-alphabet?urls=https://shop.hyundaiabcdefg.com
+
+### 3개 url 중 2개 에러 체크
+GET http://localhost:10001/api/v1/crawling/find-number-and-alphabet?urls=https://shop.hyundai.com,https://stackoverflow.com/abcdefg,https://shop.hyundaiabcdefg.com
