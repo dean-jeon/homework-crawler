@@ -53,9 +53,9 @@
 ### 재시도
 * @Retryable 을 이용하여 지정된 exception이 throw 될때만 잠시 대기했다 최대 3회까지 재시도를 합니다.
 ### 문서 조회 및 파싱
-* Jsoup을 사용하여 html 컨텐츠를 읽어옵니다. 
+* Jsoup을 사용하여 html 문서를 읽어옵니다. 
 * 요구사항대로 tag를 포함한 전체 html을 읽어서 처리하지만, tag를 제외한 text만 읽도록 변경 될 수 있으므로 Jsoup 사용이 유리하다 판단했습니다.  
-* html 문서 조회시 Redirect 동작 및 Timeout을 설정하였습니다.
+* html 문서 조회시 Redirect를 고려했고 Timeout을 설정하였습니다.
 * URL에 Scheme이 없는 경우 https로 호출합니다.
 ### 문서 컨텐츠 추출
 * 숫자의 경우 중복 제거 및 정렬을 위해 TreeMap을 사용합니다.
