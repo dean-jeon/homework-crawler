@@ -29,7 +29,7 @@
 ```
 
 ## 구현
-### 크롤링
+### 크롤링 API
 * 크롤링 API에 2개 이상의 대상 URL이 전달될 경우 1개라도 실패하면 결과는 실패로 내려가며 모든 실패한 사유 및 URL을 반환하게 처리하였습니다.
 ``` 
 성공 응답
@@ -47,9 +47,8 @@
 }
 ```
 ### 병렬 처리
-* ForkJoinPool
-  * parallelStream() 을 사용합니다.
-  * 기본 pool 이 사용되지 않도록 core수*4만큼의 pool을 config에 정의하였습니다. 
+* parallelStream()을 사용하여 복수의 사이트에서 동시에 html 문서를 가져옵니다.
+* 기본 ForkJoinPool이 아닌 config에 정의한 core수*4만큼의 custom ForkJoinPool을 사용하였습니다.
 ### 재시도
 * @Retryable 을 이용하여 지정된 exception이 throw 될때만 잠시 대기했다 최대 3회까지 재시도를 합니다.
 ### 문서 조회 및 파싱
