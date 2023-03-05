@@ -25,7 +25,7 @@ public class HtmlDocumentService {
     @Retryable(
       value = {JSoapDocumentTimeoutException.class},
       maxAttempts = 3,
-      backoff = @Backoff(delay = 3000)
+      backoff = @Backoff(delay = 2000)
     )
     public Document getHtmlDocument(String url) {
         try {
