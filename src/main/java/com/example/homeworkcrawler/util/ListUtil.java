@@ -1,7 +1,5 @@
 package com.example.homeworkcrawler.util;
 
-import static java.util.stream.Collectors.toList;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +15,7 @@ public class ListUtil {
         if (transform == null) {
             throw new IllegalArgumentException("function not defined");
         }
-        return list.stream().map(transform).collect(toList());
+        return list.stream().map(transform).toList();
     }
 
     public static <T> Stream<T> stream(Collection<T> list) {
