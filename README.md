@@ -57,7 +57,7 @@
 * html 문서 조회시 Redirect를 고려했고 Timeout을 설정하였습니다.
 * URL에 Scheme이 없는 경우 https로 호출합니다.
 ### 문서 컨텐츠 추출
-* 숫자의 경우 중복 제거 및 오름차순 정렬을 위해 TreeMap을 사용합니다.
+* 숫자의 경우 중복 제거 및 오름차순 정렬을 위해 TreeSet을 사용합니다.
 * 문자의 경우 알파벳 오름차순으로 대/소문자 Pair를 만듭니다.
 * 최종 결과 merge를 위해 Queue(LinkedList)를 사용하여 남아 있는 요소가 있는지 확인합니다.
 ### Cache
